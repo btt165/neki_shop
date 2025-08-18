@@ -34,7 +34,7 @@
     </form>
 
     <p class="link-text">
-        Giờ này còn chưa có tài khoản sao? <a href="/register">Vào đây.</a>
+        Chưa có tài khoản? <a href="/register">Vào đây.</a>
     </p>
 </div>
 <script src="{{asset('user/js/script.js')}}"></script>
