@@ -6,7 +6,7 @@
     <div class="nike-logo">
         <a href="/"><img src="{{ asset('user/images/LOGO_NIKE.png') }}"></a>
     </div>
-    <h3 class="nike-title">Chỉ mất vài bước để đăng kí thôi nha!</h3>
+    <h3 class="nike-title">Chỉ mất vài bước để bắt đầu!</h3>
 
     <form method="POST" action="/register">
         @csrf

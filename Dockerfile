@@ -6,3 +6,6 @@ COPY . /var/www/html/
 
 # Mở cổng cho Render
 EXPOSE 80
+
+# Cài extension mysqli + pdo_pgsql để hỗ trợ cả MySQL & Postgres
+RUN docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql

@@ -58,7 +58,7 @@
             <div class="accordion">
               <div class="accordion__item">
                 <div class="accordion__header">
-                  <span>Free Delivery and Returns</span>
+                  <span>Miễn phí giao hàng và đổi trả</span>
                   <i class="fa-solid fa-chevron-down icon"></i>
                 </div>
                 <div class="accordion__content">
@@ -68,7 +68,7 @@
     
               <div class="accordion__item">
                 <div class="accordion__header">
-                  <span>Reviews ()</span>
+                  <span>Đánh giá ()</span>
                   <div class="accordion__right">
                     <span class="stars">★ ★ ★ ★ ★</span>
                     <i class="fa-solid fa-chevron-down icon"></i>
