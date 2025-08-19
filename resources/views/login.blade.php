@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
 <script src="https://kit.fontawesome.com/8c390cc221.js" crossorigin="anonymous"></script>
-<link rel="icon" href="{{ asset('storage/logo/android-icon.png') }}"  type="image/x-icon">
+<link rel="icon" href="storage/logo/android-icon.png"  type="image/x-icon">
 <title>Đăng nhập</title>
 
 <!-- login.blade.php -->
 <div class="nike-container">
     <div class="nike-logo">
-        <a href="/"><img src="{{ asset('storage/logo/LOGO_NIKE.png') }}"></a>
+        <a href="/"><img src="storage/logo/LOGO_NIKE.png"></a>
     </div>
 
     <h3 class="nike-title">Đăng nhập để được nhận nhiều ưu đãi hơn!</h3>
