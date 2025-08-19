@@ -53,8 +53,9 @@ class SlideController extends Controller
     return redirect()->route('slides.index')->with('success', 'Cập nhật slide thành công!');
     }
 
-    public function destroy(Slide $slide)
+   public function destroy($id)
     {
+        $slide = Slide::find($id);
         $slide->delete();
         return redirect()->route('slides.index')->with('success', 'Xóa slide thành công!');
     }

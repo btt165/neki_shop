@@ -150,9 +150,6 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::post('dashboard/slides/store', [SlideController::class, 'store'])->name('slides.store');
     Route::put('dashboard/slides/update/{slide}', [SlideController::class, 'update'])->name('slides.update');
     Route::delete('dashboard/slides/destroy/{id}', [SlideController::class, 'destroy'])->name('slides.destroy');
-    // // Upload routes
-    // Route::post('/upload', [UploadController::class, 'uploadImage']);
-    // Route::post('/uploads', [UploadController::class, 'uploadImages']);
 
 });    
 

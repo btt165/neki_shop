@@ -40,5 +40,5 @@
         </div>
     @endforeach
 </div>
-
+<script src="{{asset('admin/asset/js/ajax.js')}}"></script>
 @endsection
