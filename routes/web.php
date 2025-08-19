@@ -22,7 +22,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Storage;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -155,4 +155,5 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     // Route::post('/uploads', [UploadController::class, 'uploadImages']);
 
 });    
+
 
