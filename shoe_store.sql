@@ -1,9 +1,9 @@
-yfg4ydu5av26927oproduct_imagesyfg4ydu5av26927oyfg4ydu5av26927oyfg4ydu5av26927oyfg4ydu5av26927oyfg4ydu5av26927oyfg4ydu5av26927o-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 18, 2025 lúc 10:21 AM
+-- Thời gian đã tạo: Th8 19, 2025 lúc 03:27 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -40,11 +40,7 @@ CREATE TABLE `brands` (
 
 INSERT INTO `brands` (`id`, `name`, `category_id`, `created_at`) VALUES
 (1, 'NIKE', 1, '2025-07-29 05:51:00'),
-(2, 'ADIDAS', 1, '2025-07-29 05:51:06'),
-(3, 'CROCS', 2, '2025-07-29 09:26:41'),
-(6, 'New Balance', 1, '2025-08-18 03:41:21'),
-(7, 'Vans', 1, '2025-08-18 03:52:59'),
-(8, 'MLB', 1, '2025-08-18 03:53:31'),
+(2, 'Jordan', 1, '2025-07-29 05:51:06'),
 (9, 'Converse', 1, '2025-08-18 03:53:45');
 
 -- --------------------------------------------------------
@@ -360,32 +356,10 @@ INSERT INTO `product_lines` (`id`, `name`, `brand_id`, `created_at`) VALUES
 (3, 'Air Max', 1, '2025-07-29 07:16:14'),
 (4, 'V2k Run', 1, '2025-07-29 07:16:33'),
 (5, 'Uptempo', 1, '2025-07-29 07:16:33'),
-(6, 'Jordan 1', 1, '2025-07-29 07:16:33'),
 (8, 'Cortez', 1, '2025-08-18 03:35:23'),
 (9, 'Dunk Low', 1, '2025-08-18 03:35:01'),
-(11, 'Ultraboost', 2, '2025-08-18 03:35:42'),
-(12, 'NMD', 2, '2025-08-18 03:35:57'),
-(13, 'Alphabounce', 2, '2025-08-18 03:36:47'),
-(14, 'Stan Smith', 2, '2025-08-18 03:39:28'),
-(15, 'Super Star', 2, '2025-08-18 03:39:46'),
-(16, 'Samba', 2, '2025-08-18 03:40:03'),
-(17, 'Falcon', 2, '2025-08-18 03:40:12'),
-(18, 'Prophere', 2, '2025-08-18 03:40:29'),
-(21, '550', 6, '2025-08-18 03:43:41'),
-(26, '990', 6, '2025-08-18 03:44:44'),
-(27, '993', 6, '2025-08-18 03:44:53'),
-(28, '996', 6, '2025-08-18 03:44:59'),
-(29, '997', 6, '2025-08-18 03:45:06'),
-(30, '998', 6, '2025-08-18 03:45:16'),
-(31, '9060', 6, '2025-08-18 03:45:22'),
-(34, 'Old Skool', 7, '2025-08-18 03:58:08'),
-(35, 'Slip ons', 7, '2025-08-18 03:58:21'),
-(36, 'Style 36', 7, '2025-08-18 03:58:41'),
-(37, 'Mules', 8, '2025-08-18 04:00:59'),
-(38, 'Bigball Chunky', 8, '2025-08-18 04:01:27'),
-(39, 'Chunky Liner', 8, '2025-08-18 04:01:47'),
-(40, 'Chunky Jogger', 8, '2025-08-18 04:02:03'),
-(41, 'Chunky Classic', 8, '2025-08-18 04:02:21'),
+(11, 'Jordan 1', 2, '2025-08-18 03:35:42'),
+(12, 'Jordan 4', 2, '2025-08-18 03:35:57'),
 (42, 'Chuck 70', 9, '2025-08-18 04:03:44'),
 (43, 'Classic Chuck', 9, '2025-08-18 04:03:55'),
 (44, 'Elevation', 9, '2025-08-18 04:04:07'),
@@ -539,7 +513,6 @@ CREATE TABLE `slides` (
 --
 
 INSERT INTO `slides` (`id`, `title`, `image`, `link`, `status`, `created_at`) VALUES
-(1, 'hehe', 'slides/hwrgSEK5Gl5FHAcbNMkhLJHHhwOlUQkrZmQ5LtqE.bin', 'http://127.0.0.1:8000/category', '0', '2025-08-16 11:50:21'),
 (2, 'hihi', 'slides/QPcbGlPCFuqpLPtfbCPSW0GYQEGJx7AVoO4RSPWv.bin', 'http://127.0.0.1:8000/category', '1', '2025-08-16 11:58:14'),
 (3, 'hjhj', 'slides/Qg9x8yCPiHAxh1LAOaKCcPgvO29rrDVEcXaadFaq.webp', 'http://127.0.0.1:8000/category', '1', '2025-08-16 15:57:29');
 
@@ -807,23 +780,10 @@ ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`productLine_id`) REFERENCES `product_lines` (`id`) ON DELETE SET NULL;
 
 --
--- Các ràng buộc cho bảng `product_images`
---
-ALTER TABLE `product_images`
-  ADD CONSTRAINT `product_images_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
-
---
 -- Các ràng buộc cho bảng `product_lines`
 --
 ALTER TABLE `product_lines`
   ADD CONSTRAINT `product_lines_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE CASCADE;
-
---
--- Các ràng buộc cho bảng `quantities`
---
-ALTER TABLE `quantities`
-  ADD CONSTRAINT `quantities_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `quantities_ibfk_2` FOREIGN KEY (`size_id`) REFERENCES `sizes` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

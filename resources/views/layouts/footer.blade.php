@@ -5,8 +5,8 @@
         <li><a href=""></a>Giới thiệu</li>
         <li><a href=""></a>Liên hệ</li>
         <li>
-            <a href="" class="fa-brands fa-square-facebook"></a>
-            <a href="" class="fa-brands fa-square-instagram"></a>
+            <a href="https://www.facebook.com/btt165" class="fa-brands fa-square-facebook"></a>
+            <a href="https://www.instagram.com/thanh.tam165/" class="fa-brands fa-square-instagram"></a>
             <a href="" class="fa-brands fa-tiktok"></a>
         </li>
     </div>
