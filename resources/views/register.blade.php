@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+<link rel="icon" href="storage/logo/android-icon.png"  type="image/x-icon">
 <script src="https://kit.fontawesome.com/8c390cc221.js" crossorigin="anonymous"></script>
-
+<title>Đăng kí</title>
 <!-- register.blade.php -->
 <div class="nike-container">
     <div class="nike-logo">
-        <a href="/"><img src="{{ asset('user/images/LOGO_NIKE.png') }}"></a>
+        <a href="/"><img src="storage/logo/LOGO_NIKE.png"></a>
     </div>
     <h3 class="nike-title">Chỉ mất vài bước để bắt đầu!</h3>
 

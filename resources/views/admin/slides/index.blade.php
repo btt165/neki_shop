@@ -34,11 +34,12 @@
                         Sửa
                     </button>
                     @include('admin.slides.partials.edit-modal', ['s' => $s])
-                    <a href="" onclick="remove('{{route('slides.destroy', $s->id)}}')" class="btn btn-sm btn-secondary">Xoá</a>
+                    <a href="" onclick="remove('{{ route('slides.destroy', $s->id) }}')" class="btn btn-sm btn-secondary">Xoá</a>
                 </div>
             </div>
         </div>
     @endforeach
 </div>
-
+<script src="{{asset('admin/asset/js/ajax.js')}}"></script>
 @endsection
+
