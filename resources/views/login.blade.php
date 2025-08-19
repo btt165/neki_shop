@@ -4,7 +4,7 @@
 <!-- login.blade.php -->
 <div class="nike-container">
     <div class="nike-logo">
-        <a href="/"><img src="{{ asset('user/images/LOGO_NIKE.png') }}"></a>
+        <a href="/"><img src="{{ asset('storage/logo/LOGO_NIKE.png') }}"></a>
     </div>
 
     <h3 class="nike-title">Đăng nhập để được nhận nhiều ưu đãi hơn!</h3>
