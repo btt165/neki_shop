@@ -25,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+        return;
+    }
         // Lấy tất cả category kèm brands và product lines
         $categories = Category::with(['brands.productLines'])->get();
 
