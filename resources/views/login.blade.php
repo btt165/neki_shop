@@ -36,5 +36,5 @@
     <p class="link-text">
         Chưa có tài khoản? <a href="/register">Vào đây.</a>
     </p>
-</div>
+</div> 
 <script src="{{asset('user/js/script.js')}}"></script>
