@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
 <script src="https://kit.fontawesome.com/8c390cc221.js" crossorigin="anonymous"></script>
+<link rel="icon" href="{{ asset('storage/logo/android-icon.png') }}"  type="image/x-icon">
+<title>Đăng kí</title>
 
 <!-- register.blade.php -->
 <div class="nike-container">
