@@ -82,7 +82,7 @@
                             <li>
                                 <label class="color-option">
                                     <input type="checkbox" class="color-filter" value="{{ $color->id }}">
-                                    <img src="{{ asset($color->image) }}" alt="{{ $color->name }}">
+                                    <img src="{{ asset('storage/'.$color->image) }}" alt="{{ $color->name }}">
                                     <p>{{ $color->name }}</p>
                                     <span class="checkmark"></span>
                                 </label>
