@@ -54,7 +54,6 @@ overlay.addEventListener('mouseenter', () => {
     });
     });
 
-
 function togglePassword(el) {
     let input = el.previousElementSibling;
     let icon = el.querySelector("i");

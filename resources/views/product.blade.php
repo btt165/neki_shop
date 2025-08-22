@@ -14,7 +14,7 @@
         </div>
       </div>
           <div class="product__right">
-            <form action="{{ route('cart.store') }}" method="POST">
+            <form id="addToCart" action="{{ route('cart.store') }}" method="POST">
                 @csrf
                 <div class="product__title">
                 <h1>{{$product->name}}</h1>
@@ -30,23 +30,21 @@
                 </div>
                 </div>
                 <div class="product__size">
-                <p><strong>Size</strong></p>
-                <div class="product__size-options" >
-                    @foreach($product->sizes as $s)
-                        <span data-id="{{$s->name}}">{{$s->name}} </span>
-                    @endforeach
+                  <p><strong>Size</strong></p>
+                  <div class="product__size-options" >
+                      @foreach($product->sizes as $s)
+                          <span data-id="{{$s->name}}">{{$s->name}}</span>
+                      @endforeach
+                  </div>
+                  <span class="product__size-warning">Vui lòng chọn size*</span>
                 </div>
-                <span class="product__size-warning">Vui lòng chọn size*</span>
-            </div>
                 <div class="product__cart">
                     <input type="hidden" value="{{$product->id}}" name="product_id">
-                    <input type="hidden" name="size_id" id="selectedSize" value="" >
+                    <input type="hidden" name="size_id" id="selectedSize" >
                     <input type="hidden" name="color_id"  value="{{$product->color_id}}">
                     <input type="hidden" name="category_id"  value="{{$product->category_id}}">
                     <input type="hidden" name="quantity" value="1">
-
                     <button type="submit" class="btn--add-to-cart">Thêm vào giỏ</button>
-                    {{-- <button class="btn--wishlist "><i class="fa-regular fa-heart"> </i> Yêu thích </button> --}}
                 </div>
             </form>
             <div class="product__info">
@@ -82,8 +80,10 @@
           </div>
     </div>
   </div>
-  <!-- Product related -->
-<x-related-products :product-id="$product->id"/>
+  <div class="container">
+    <!-- Product related -->
+  <x-related-products :product-id="$product->id"/>
+  </div>
 
 <!-- Popup giỏ hàng -->
 <div id="cart-popup" class="cart-popup">
@@ -105,7 +105,6 @@
 </div>
 
 
-
 @endsection
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -113,18 +112,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartCount = document.getElementById("cart-count");
     const popup = document.getElementById("cart-popup");
     const popupClose = document.getElementById("cart-popup-close");
+    const sizeOptions = document.querySelectorAll(".product__size-options span");
+    const form = document.getElementById("addToCart");
+    const hiddenInput = document.getElementById("selectedSize");
+    const sizeWarning = document.querySelector(".product__size-warning");
 
     addToCartBtn.addEventListener("click", function (e) {
         e.preventDefault();
-
         // Kiểm tra trước khi submit
         if (!hiddenInput.value) {
-            e.preventDefault(); // Ngăn submit
-            sizeWarning.style.display = "block";
-        }
+                sizeWarning.style.display = "block";
+                return;
+            }
 
-        // Ẩn cảnh báo
-            sizeWarning.style.display = "none";
+        sizeWarning.style.display = "none";
 
         const formData = new FormData();
         formData.append("product_id", document.querySelector("[name='product_id']").value);
@@ -167,16 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
     popupClose.addEventListener("click", function () {
         popup.style.display = "none";
     });
-    
-     // Thêm highlight size đang chọn và nhận giá trị gửi vào form
-    const sizeOptions = document.querySelectorAll(".product__size-options span");
-    const hiddenInput = document.getElementById("selectedSize");
-    const sizeWarning = document.querySelector(".product__size-warning");
-    const form = document.querySelector("form");
 
     // Xử lý chọn size
-    sizeOptions.forEach(option => {
-        option.addEventListener("click", function(){
+  sizeOptions.forEach(option => {
+      option.addEventListener("click", function(){
           // Xóa active ở tất cả
           sizeOptions.forEach(o => o.classList.remove("active"));
 
@@ -188,9 +183,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Ẩn cảnh báo
           sizeWarning.style.display = "none";
-        });
-    });
+      });
+  });
 });
-
 
 </script>
