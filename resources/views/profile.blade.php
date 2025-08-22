@@ -32,8 +32,8 @@
                 <a href="#" data-bs-toggle="modal" data-bs-target="#phoneModal">Thêm</a>
             </div>
 
-            <label>Ngày tháng năm xinh</label>
-            <input type="text" value="{{ $user->dob }}" readonly>
+            <label>Ngày tháng năm sinh</label>
+            <input type="text" value="{{ \Carbon\Carbon::parse($user->dob)->format('d/m/Y') }}" readonly>
 
             <h3>Địa chỉ</h3>
             

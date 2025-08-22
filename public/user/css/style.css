@@ -502,7 +502,6 @@ header {
 
 /* Sản phẩm mơi nhất */
 .new-arrivals {
-  padding: 0px 24px;
   margin-bottom: 32px;
   position: relative;
 }
@@ -1200,7 +1199,6 @@ footer {
 
 .product__related {
     margin-bottom: 50px;
-    padding: 0 24px;
     margin-left: auto;     
     margin-right: auto;
 }
@@ -1329,8 +1327,7 @@ footer {
   .item img {
     width: 160px;
     background: #f5f5f5;
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
+    object-fit: contain;
 }
 
 .item__details {
