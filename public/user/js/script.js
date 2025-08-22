@@ -55,39 +55,6 @@ overlay.addEventListener('mouseenter', () => {
     });
 
 
-    // Thêm highlight size đang chọn và nhận giá trị gửi vào form
-    document.addEventListener("DOMContentLoaded", function(){
-    const sizeOptions = document.querySelectorAll(".product__size-options span");
-    const hiddenInput = document.getElementById("selectedSize");
-    const sizeWarning = document.querySelector(".product__size-warning");
-    const form = document.querySelector("form");
-
-    // Xử lý chọn size
-    sizeOptions.forEach(option => {
-        option.addEventListener("click", function(){
-            // Xóa active ở tất cả
-            sizeOptions.forEach(o => o.classList.remove("active"));
-
-            // Thêm active vào cái được click
-            this.classList.add("active");
-
-            // Gán giá trị ID size vào input hidden
-            hiddenInput.value = this.dataset.id;
-
-            // Ẩn cảnh báo
-            sizeWarning.style.display = "none";
-        });
-    });
-
-    // Kiểm tra trước khi submit
-    form.addEventListener("submit", function(e){
-        if (!hiddenInput.value) {
-            e.preventDefault(); // Ngăn submit
-            sizeWarning.style.display = "block";
-        }
-    });
-});
-
 function togglePassword(el) {
     let input = el.previousElementSibling;
     let icon = el.querySelector("i");

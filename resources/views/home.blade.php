@@ -36,8 +36,11 @@
                 <button class="arrivals-btn next-btn">&#10095;</button>
             </div>
         </div>
-          <!-- Product related -->
+    <div class="container">
+
+        <!-- Product related -->
         <x-related-products :product-id="$p->id"/>
+    </div>
 </div>
 </body>
 @include('layouts.footer')

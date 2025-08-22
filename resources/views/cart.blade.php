@@ -55,9 +55,10 @@
             <a href="{{ url()->previous() }}" class="back__btn">Quay lại</a>
         </div>
 </div>
-
-  <!-- Product related -->
-<x-related-products :product-id="$productId"/>
+<div class="container">
+    <!-- Product related -->
+  <x-related-products :product-id="$productId"/>
+</div>
 
 <script>
     window.updateCartUrl = "{{ route('cart.update') }}";
