@@ -28,7 +28,7 @@
                         <div class="arrival-item">
                             <a href="/product/{{$p->id}}"><img src="{{asset('storage/' . $p->image)}}" alt=""></a>
                             <a href="/product/{{$p->id}}"><h3>{{$p->name}}</h3></a>
-                            <p>{{$p->productLine->name}}</p>
+                            {{-- <p>{{$p->productLine->name}}</p> --}}
                             <span class="price">{{number_format($p->price), 0, ',','.'}}<sup>đ</sup></span>
                         </div>
                     @endforeach
