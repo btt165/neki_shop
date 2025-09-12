@@ -16,15 +16,15 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('des');
-            $table->string('image')->nullable();
-            $table->integer('price');
-            $table->string('product_code')->unique();
-            $table->foreignId('color_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('brand_id')->constrained()->onDelete('cascade');
-            $table->foreignId('productLine_id')->constrained('product_lines')->onDelete('cascade');
-            $table->timestamps();
+            $table->text('des')->nullable();
+            $table->decimal('price', 10, 2);
+            $table->string('product_code', 100)->unique();
+            $table->foreignId('color_id')->nullable()->constrained('colors')->nullOnDelete();
+            $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
+            $table->foreignId('brand_id')->nullable()->constrained('brands')->nullOnDelete();
+            $table->foreignId('productLine_id')->nullable()->constrained('product_lines')->nullOnDelete();
+            $table->string('image', 255)->nullable();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

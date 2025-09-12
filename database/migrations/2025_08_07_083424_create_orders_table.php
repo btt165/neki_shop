@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+       Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
-            $table->string('address');
-            $table->string('city');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('payment_method');
-            $table->decimal('total_price', 12, 2);
-            $table->string('status')->default('pending');
-            $table->timestamps();
+            $table->text('address');
+            $table->string('city', 100);
+            $table->string('phone', 20);
+            $table->string('email')->nullable();
+            $table->string('payment_method', 50);
+            $table->decimal('total_price', 10, 2);
+            $table->timestamp('created_at')->useCurrent();
+            $table->string('status', 50)->default('Chờ xác nhận');
         });
     }
 

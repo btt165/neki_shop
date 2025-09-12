@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('quantities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained()->onDelete('cascade');
-            $table->foreignId('size_id')->constrained()->onDelete('cascade');
-            $table->integer('amount');
-            $table->timestamps();
+            $table->foreignId('product_id')->nullable()->constrained('products')->nullOnDelete();
+            $table->foreignId('size_id')->nullable()->constrained('sizes')->nullOnDelete();
+            $table->integer('amount')->nullable();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 
