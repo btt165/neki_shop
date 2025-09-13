@@ -12,3 +12,6 @@ echo ""
 
 echo "Running migrations..."
 php artisan migrate --force
+ 
+echo "Running storage link..."
+php artisan storage:link
