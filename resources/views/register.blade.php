@@ -62,10 +62,10 @@
             <div class="form-group">
                 <input type="number" name="year" placeholder="Năm*" min="1900" max="2100" required>
             </div>
+        </div>
             @error('day')<div class="error-text">{{ $message }}</div>@enderror
             @error('month')<div class="error-text">{{ $message }}</div>@enderror
             @error('year')<div class="error-text">{{ $message }}</div>@enderror
-        </div>
 
         <!-- Submit -->
         <button type="submit" class="btn-nike">Tạo tài khoản</button>

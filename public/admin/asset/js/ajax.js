@@ -30,26 +30,26 @@ function remove(url) {
 // Load dữ liệu theo danh mục 
 $(document).ready(function () {
     // Khi chọn danh mục
-    $(document).on('change', '.category-select', function () {
-        const categoryId = $(this).val();
-        const parent = $(this).closest('form'); // lấy form chứa select này
+    // $(document).on('change', '.category-select', function () {
+    //     const categoryId = $(this).val();
+    //     const parent = $(this).closest('form'); // lấy form chứa select này
 
-        const brandSelect = parent.find('.brand-select');
-        const productLineSelect = parent.find('.productline-select');
+    //     const brandSelect = parent.find('.brand-select');
+    //     const productLineSelect = parent.find('.productline-select');
 
-        brandSelect.html('<option value="">-- Đang tải thương hiệu --</option>');
-        productLineSelect.html('<option value="">-- Chọn dòng sản phẩm --</option>');
+    //     brandSelect.html('<option value="">-- Đang tải thương hiệu --</option>');
+    //     productLineSelect.html('<option value="">-- Chọn dòng sản phẩm --</option>');
 
-        if (categoryId) {
-            $.get(`/api/brands-by-category/${categoryId}`, function (data) {
-                let options = '<option value="">-- Chọn thương hiệu --</option>';
-                data.forEach(function (brand) {
-                    options += `<option value="${brand.id}">${brand.name}</option>`;
-                });
-                brandSelect.html(options);
-            });
-        }
-    });
+    //     if (categoryId) {
+    //         $.get(`/api/brands-by-category/${categoryId}`, function (data) {
+    //             let options = '<option value="">-- Chọn thương hiệu --</option>';
+    //             data.forEach(function (brand) {
+    //                 options += `<option value="${brand.id}">${brand.name}</option>`;
+    //             });
+    //             brandSelect.html(options);
+    //         });
+    //     }
+    // });
 
     // Khi chọn thương hiệu
     $(document).on('change', '.brand-select', function () {
@@ -71,7 +71,6 @@ $(document).ready(function () {
         }
     });
 });
-
 
 
 document.addEventListener('DOMContentLoaded', function () {

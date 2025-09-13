@@ -16,6 +16,10 @@ services:
         value: pgsql
       - key: DATABASE_URL
         value: postgresql://neki_shop_dyye_user:3gOnPeUQH6suzUCiwkH594ewVtLBFYFW@dpg-d32gonqdbo4c73ae0f70-a/neki_shop_dyye
+    disk:
+      name: storage
+      mountPath: /var/www/html/storage
+      sizeMB: 512
     preDeployCommand: |
-      php artisan migrate --force
+      php artisan storage:link
     healthCheckPath: /

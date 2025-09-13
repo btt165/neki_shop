@@ -18,14 +18,18 @@ class AuthController extends Controller
     // Xử lý đăng ký
     public function register(Request $request)
     {
+        $day   = (int) $request->day;
+        $month = (int) $request->month;
+        $year  = (int) $request->year;
+
         $request->validate([
             'email'       => 'required|email|unique:users,email',
             'first_name'  => 'required|string|max:50',
             'last_name'     => 'required|string|max:50',
             'password'    => 'required|string|min:8',
-            'day'         => 'required|integer|min:1|max:31',
-            'month'       => 'required|integer|min:1|max:12',
-            'year'        => 'required|integer|min:1900|max:' . date('Y'),
+            $day         => 'required|integer|min:1|max:31',
+            $month       => 'required|integer|min:1|max:12',
+            $year       => 'required|integer|min:1900|max:' . date('Y'),
         ], [
             'email.required' => 'Vui lòng nhập email.',
             'email.email'    => 'Email không hợp lệ.',
@@ -37,7 +41,7 @@ class AuthController extends Controller
         ]);
 
         // Gộp ngày sinh
-        $dob = sprintf('%04d-%02d-%02d', $request->year, $request->month, $request->day);
+        $dob = sprintf('%04d-%02d-%02d', $year, $month, $day);
 
         // Lưu user
         $user = User::create([

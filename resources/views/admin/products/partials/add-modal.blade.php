@@ -44,6 +44,9 @@
                             <label class="form-label">Thương hiệu</label>
                                 <select name="brand_id" class="form-select brand-select" required>
                                     <option value="{{old('brand_id')}}">-- Chọn thương hiệu --</option>
+                                    @foreach($brands as $b)
+                                        <option value="{{ $b->id }}">{{ $b->name }}</option>
+                                    @endforeach
                                 </select>
                         </div>
                         <div class="col-md-6">

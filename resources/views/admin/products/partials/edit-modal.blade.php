@@ -46,6 +46,9 @@
                     <div class="col-md-6">
                         <label class="form-label">Thương hiệu</label>
                         <select name="brand_id" id="edit-brand" class="form-select brand-select" required>
+                            @foreach($brands as $b)
+                                <option value="{{ $b->id }}">{{ $b->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <!-- Ảnh chính -->
