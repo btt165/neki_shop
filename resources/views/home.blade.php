@@ -31,13 +31,14 @@
                             <p>{{$p->productLine->name}}</p>
                             <span class="price">{{number_format($p->price), 0, ',','.'}}<sup>đ</sup></span>
                         </div>
-                    @endforeach
+                    
                 </div>
                 <button class="arrivals-btn next-btn">&#10095;</button>
             </div>
     </div>
         <!-- Product related -->
     <x-related-products :product-id="$p->id"/>
+        @endforeach
 </div>
 </body>
 @include('layouts.footer')
