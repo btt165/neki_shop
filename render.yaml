@@ -1,7 +1,22 @@
+
 services:
   - type: web
-    name: my-php-app
-    env: docker
-    plan: free
-    autoDeploy: true
-    
+    name: neki_shop
+    runtime: docker
+    repo: https://github.com/btt165/neki_shop  # đổi thành repo của bạn
+    branch: master
+    plan: free       # chọn gói phù hợp
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        sync: false   # bạn sẽ tự set APP_KEY trong dashboard hoặc secrets
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        value: postgresql://neki_shop_dyye_user:3gOnPeUQH6suzUCiwkH594ewVtLBFYFW@dpg-d32gonqdbo4c73ae0f70-a/neki_shop_dyye
+    preDeployCommand: |
+      php artisan migrate --force
+    healthCheckPath: /
