@@ -19,7 +19,7 @@ services:
     disk:
       name: storage
       mountPath: /var/www/html/storage
-      sizeMB: 512
+      sizeGB: 1
     preDeployCommand: |
       php artisan storage:link
     healthCheckPath: /
