@@ -4,7 +4,7 @@ services:
     runtime: docker
     repo: https://github.com/btt165/neki_shop  # đổi thành repo của bạn
     branch: master
-    plan: free       # chọn gói phù hợp
+    plan: starter       # chọn gói phù hợp
     envVars:
       - key: APP_ENV
         value: production
