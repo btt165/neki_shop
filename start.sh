@@ -8,10 +8,5 @@ php artisan config:cache
 echo "Caching routes..."
 php artisan route:cache
 
-echo ""
 
-echo "Running migrations..."
-php artisan migrate --force
- 
-echo "Running storage link..."
-php artisan storage:link
+
